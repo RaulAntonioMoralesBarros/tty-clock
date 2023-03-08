@@ -10,10 +10,17 @@ url="http://github.com/xorg62/tty-clock"
 license=('unknown')
 depends=('ncurses')
 source=("$pkgname-$pkgver.tgz::https://github.com/xorg62/tty-clock/archive/v$pkgver.tar.gz")
+
 md5sums=('2452b5a3286d4d7993913cbfc744ed1e')
+
+#patched bug - DATE:05/03/2023
+codelinebug='mvwprintw(ttyclock->datewin, (DATEWINH / 2), 1, ttyclock->date.datestr);'
+codelinepatch='mvwprintw(ttyclock->datewin, (DATEWINH / 2), 1,"%s" ,ttyclock->date.datestr);'
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
+  sed -i 's/mvwprintw(ttyclock->datewin, (DATEWINH \/ 2), 1, ttyclock->date.datestr);/mvwprintw(ttyclock->datewin, (DATEWINH \/ 2), 1, "%s",ttyclock->date.datestr);/g' "ttyclock.c"
+  read -rsp $'Press enter to continue...\n'  
   make
 }
 
