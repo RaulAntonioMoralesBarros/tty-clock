@@ -1,11 +1,12 @@
 
 <h1 align="center">
   <br>
-  <img src="" alt="tty-clock" width="200">
+  <img src=img/tty-clock-example.png alt="tty-clock" width="200"/>
   <br>
   tty-clock
   <br>
 </h1>
+
 
 <h4 align="center">Un reloj digital para la terminal de linux.</h4>
 
@@ -14,10 +15,6 @@
     https://aur.archlinux.org/tty-clock.git
   </a>
 </p>
-
-
-
-![screenshot](https://agregar.gif)
 
 ## Descripción del repositorio 
 Con tty-clock tendrás un reloj digital simple en la terminal. Sin opciones que obstaculicen la vista del objetivo principal, mostrar la hora.
